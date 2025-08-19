@@ -1,0 +1,15 @@
+html {
+    scroll-behavior: smooth;
+}
+
+.container   {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+

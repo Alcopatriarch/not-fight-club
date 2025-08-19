@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Not Fight Club - Vladyslav Ivankov</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    window.onload = () => {
+      const name = localStorage.getItem("username");
+      if (!name) {
+        // Если имени нет — возвращаемся на index.html
+        window.location.href = "index.html";
+      } else {
+        document.getElementById("greeting").innerText = "Привет, " + name + "!";
+      }
+    };
+
+    function logout() {
+      localStorage.removeItem("username");
+      window.location.href = "index.html";
+    }
+
+    function nextPage() {
+        window.location.href = "fight.html";
+    }
+  </script>
+</head>
+<body>
+    <header>
+        <section id="header" class="header">
+            <div class="currentSection">
+                <p>Main</p>
+            </div>
+            <div class="menu">
+                <a href="">
+                    <img class="logoHome" src="./assets/svg/home.svg" alt="logoHome">
+                </a>
+                <a href="./character.html">
+                    <img class="logoCharacter" src="./assets/svg/character.svg" alt="logoCharacter">
+                </a>
+                <a href="./settings.html">
+                    <img class="logoSettings" src="./assets/svg/settings.svg" alt="logoSettings">
+                </a>
+            </div>
+        </section>
+    </header>
+    <main>
+        <section>
+        <div class="container">
+            <button onclick="nextPage()">Fight!</button>
+        </div>
+        </section>
+    </main>
+</body>
+</html>
