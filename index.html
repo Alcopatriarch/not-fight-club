@@ -3,25 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="style.css">
+  <script src="js.js" type="text/javascript"></script>
   <title>Not Fight Club - Vladyslav Ivankov</title>
   <script>
-    window.onload = () => {
-      const savedName = localStorage.getItem("username");
-      if (savedName) {
-        // Если имя уже сохранено — сразу на welcome.html
-        window.location.href = "welcome.html";
-      }
-    };
+    
 
-    function saveName() {
-      const name = document.getElementById("username").value.trim();
-      if (name) {
-        localStorage.setItem("username", name);
-        window.location.href = "welcome.html";
-      } else {
-        alert("Please, enter your name!");
-      }
-    }
+    
   </script>
 </head>
 <body>

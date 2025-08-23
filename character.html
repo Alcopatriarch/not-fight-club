@@ -4,14 +4,13 @@
   <meta charset="UTF-8">
   <title>Not Fight Club - Vladyslav Ivankov</title>
   <link rel="stylesheet" href="style.css">
-  <script>
-  </script>
+  <script src="js.js" type="text/javascript"></script>
 </head>
 <body>
     <header>
         <section id="header" class="header">
             <div class="currentSection">
-                <p>Main</p>
+                <p>Character</p>
             </div>
             <div class="menu">
                 <a href="./fight.html">
@@ -27,9 +26,73 @@
         </section>
     </header>
     <main>
-        <section>
-            
+        <section id="character" class="character">
+            <div class="characterInformation">
+                <div class="characterAvatar">
+                    <img class="characterAvatarImg" id="avatar" src="./assets/img/avatars/snake.jpg" alt="avatar"> <br>
+                    <button class="buttonAvatar" onclick="openPopup()">Change Avatar</button>
+                </div>
+                <div class="characterResults">
+                    <div id="nickname">
+                    </div>
+                    <div class="results">
+                        <span>Wins: 0</span>
+                        <span>Loses: 0</span>
+                    </div>
+                </div>
+            </div>
+            <div id="overlay" class="overlay">
+                <div class="popup">
+                    <button onclick="closePopup()">Close</button>
+                    <div class="avatarsPopup">
+                        <div class="avatarsPopupImgDiv">
+                            <img class="avatarsPopupImg" src="./assets/img/avatars/snake.jpg" alt="snake">
+                            <button onclick="changeAvatar('./assets/img/avatars/snake.jpg')">Choose Snake</button>
+                        </div>
+                        <div class="avatarsPopupImgDiv">
+                            <img class="avatarsPopupImg" src="./assets/img/avatars/joel.jpg" alt="joel">
+                            <button onclick="changeAvatar('./assets/img/avatars/joel.jpg')">Choose Joel</button>
+                        </div>
+                        <div class="avatarsPopupImgDiv">
+                            <img class="avatarsPopupImg" src="./assets/img/avatars/tassadar.jpg" alt="tassadar">
+                            <button onclick="changeAvatar('./assets/img/avatars/tassadar.jpg')">Choose Tassadar</button>
+                        </div>
+                        <div class="avatarsPopupImgDiv">
+                            <img class="avatarsPopupImg" src="./assets/img/avatars/thrall.jpg" alt="thrall">
+                            <button onclick="changeAvatar('./assets/img/avatars/thrall.jpg')">Choose Thrall</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
+    <script>
+    function openPopup() {
+        document.getElementById("overlay").style.display = "flex";
+
+    }
+    
+    function closePopup() {
+        document.getElementById("overlay").style.display = "none";
+    }
+
+    function changeAvatar(newImagePath) {
+        const avatarElement = document.getElementById('avatar');
+        avatarElement.src = newImagePath;
+        localStorage.setItem('characterAvatarImg', newImagePath);
+    }
+
+    function loadAvatar() {
+        const savedAvatar = localStorage.getItem('characterAvatarImg');
+        if (savedAvatar) {
+            changeAvatar(savedAvatar);
+        }
+    }
+    
+    document.addEventListener('DOMContentLoaded', () => {
+        loadAvatar();
+        createAvatarButtons();
+    });
+    </script>
 </body>
 </html>
