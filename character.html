@@ -33,8 +33,7 @@
                     <button class="buttonAvatar" onclick="openPopup()">Change Avatar</button>
                 </div>
                 <div class="characterResults">
-                    <div id="nickname">
-                    </div>
+                    <div id="nickname"></div>
                     <div class="results">
                         <span>Wins: 0</span>
                         <span>Loses: 0</span>
@@ -66,33 +65,5 @@
             </div>
         </section>
     </main>
-    <script>
-    function openPopup() {
-        document.getElementById("overlay").style.display = "flex";
-
-    }
-    
-    function closePopup() {
-        document.getElementById("overlay").style.display = "none";
-    }
-
-    function changeAvatar(newImagePath) {
-        const avatarElement = document.getElementById('avatar');
-        avatarElement.src = newImagePath;
-        localStorage.setItem('characterAvatarImg', newImagePath);
-    }
-
-    function loadAvatar() {
-        const savedAvatar = localStorage.getItem('characterAvatarImg');
-        if (savedAvatar) {
-            changeAvatar(savedAvatar);
-        }
-    }
-    
-    document.addEventListener('DOMContentLoaded', () => {
-        loadAvatar();
-        createAvatarButtons();
-    });
-    </script>
 </body>
 </html>

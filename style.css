@@ -47,6 +47,10 @@ html {
     width: 200px;
 }
 
+.enemiesPopupImg    {
+    width: 200px;
+}
+
 .popup {
     background: white;
     padding: 20px;
@@ -96,4 +100,32 @@ html {
 
 main    {
     padding-top: 15px;
+}
+
+.fight  {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.zonesAttackDefence  {
+    display: flex;
+    gap: 2rem;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+.separator  {
+    width: 2px;
+    background-color: gray;
+}
+
+.RadioCheckboxInput {
+    margin: 0;
+    cursor: pointer;
+}
+
+.attack {
+    display: flex;
+    justify-content: center;
 }

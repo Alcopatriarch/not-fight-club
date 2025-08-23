@@ -16,3 +16,28 @@ window.onload = () => {
         window.location.href = "index.html";
       }
     };
+
+function openPopup() {
+    document.getElementById("overlay").style.display = "flex";
+}
+    
+function closePopup() {
+    document.getElementById("overlay").style.display = "none";
+}
+
+function changeAvatar(newImagePath) {
+    const avatarElement = document.getElementById('avatar');
+    avatarElement.src = newImagePath;
+    localStorage.setItem('characterAvatarImg', newImagePath);
+}
+
+function loadAvatar() {
+    const savedAvatar = localStorage.getItem('characterAvatarImg');
+    if (savedAvatar) {
+        changeAvatar(savedAvatar);
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    loadAvatar();
+});
