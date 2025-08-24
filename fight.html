@@ -32,7 +32,10 @@
             <div >
                 <div id="nickname"></div> <br>
                 <img class="characterAvatarImg" id="avatar" src="./assets/img/avatars/snake.jpg" alt="avatar"> <br>
-
+                <div class="HealthBarContainer">
+                    <progress class="HealthBar" value="150" max="150"></progress>
+                    <p class="HealthBarLabel">150/150</p>
+                </div>
             </div>
             <div class="divAttackDefence">
                 <p>Please pick 1 Attack zone and 2 Defence zones</p>
@@ -62,7 +65,7 @@
                             </div>
                         </div>
                         <div class="separator"></div>
-                        <div class="defence">
+                        <div class="Defence">
                             <div class="DefenceZones">
                                 <p> Defence Zones</p>
                                 <div class="RadioCheckboxContainer">
@@ -92,11 +95,14 @@
                         <button >Attack!</button>
                     </div>
                 </div>
-                
             </div>
             <div >
                 <div id="nicknameEnemy">Tyrant</div> <br>
                 <img class="enemiesPopupImg" id="avatar" src="./assets/img/enemies/tyrant.jpg" alt="avatar"> <br>
+                <div class="HealthBarContainer">
+                    <progress class="HealthBar" value="120" max="120"></progress>
+                    <p class="HealthBarLabel">120/120</p>
+                </div>
             </div>
         </section>
     </main>
