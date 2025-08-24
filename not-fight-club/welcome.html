@@ -8,18 +8,7 @@
   <script>
     window.onload = () => {
       const name = localStorage.getItem("username");
-      if (!name) {
-        // Если имени нет — возвращаемся на index.html
-        window.location.href = "index.html";
-      } else {
-        document.getElementById("greeting").innerText = "Привет, " + name + "!";
-      }
     };
-
-    function logout() {
-      localStorage.removeItem("username");
-      window.location.href = "index.html";
-    }
 
     function nextPage() {
         window.location.href = "fight.html";
