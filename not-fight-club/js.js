@@ -12,8 +12,6 @@ window.onload = () => {
       const name = localStorage.getItem("username");
       if (name) {
         document.getElementById("nickname").innerText = name;
-      } else {
-        window.location.href = "index.html";
       }
     };
 
